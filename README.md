@@ -19,19 +19,41 @@ Per the assignment requirements, this application is written in a strictly **mod
 
 ```text
 Final_Project/
+├── .env                        # Environment variables (Ignored in Git)
+├── .gitignore                  # Git ignore configuration
 ├── dashboard/
 │   └── app.py                  # Main Streamlit UI frontend
 ├── scanner/
-│   ├── nmap_scanner.py         # Nmap port mapping logic
-│   ├── config_scanner.py       # Local OS & package auditing
+│   ├── config_scanner.py       # Local OS & package vulnerability auditing
+│   ├── nmap_scanner.py         # Nmap port mapping & service detection
 │   └── openvas.py              # OpenVAS Enterprise API wrapper
 ├── threat_intel/
-│   └── aggregator.py           # Core logic merging VT, Shodan & AbuseIPDB
+│   ├── abuseipdb.py            # AbuseIPDB API wrapper
+│   ├── aggregator.py           # Core logic merging threat intelligence feeds
+│   ├── nessus.py               # Nessus Scanner Integration API
+│   ├── shodan.py               # Shodan API wrapper
+│   └── virustotal.py           # VirusTotal API wrapper
 ├── risk/
-│   ├── risk_score.py           # CVSS metric mathematics
-│   └── ml_model.py             # Feature engineering & ML risk prediction
+│   ├── advanced_analysis.py    # Advanced risk metrics analysis
+│   ├── analytics_engine.py     # Aggregation for historical dashboard metrics
+│   ├── anomaly.py              # Detection of unusual risk patterns
+│   ├── compliance.py           # OWASP Top 10 and NIST CSF compliance mapping
+│   ├── explainability.py       # Risk score rationale extraction
+│   ├── feature_engineering.py  # Feature preparation for ML
+│   ├── ml_model.py             # Machine learning risk prediction engine
+│   ├── normalization.py        # ML data normalization
+│   ├── posture.py              # Overall system cybersecurity posture calculation
+│   ├── prioritization.py       # Risk remediation prioritization
+│   ├── reasoning.py            # Automated reasoning engine
+│   └── risk_score.py           # CVSS metric mathematics and base scoring
+├── utils/
+│   ├── alerts.py               # Toast notifications for dashboard
+│   ├── email_alert.py          # SMTP-based high risk email notifications
+│   ├── helpers.py              # General utility components
+│   ├── report.py               # FPDF2 engine for audit-ready PDF reports
+│   └── storage.py              # SQLite storage for historical scan tracking
 ├── data/
-│   └── history.json            # Flat-file database for history/SQLite equivalent
+│   └── sentinel.db             # SQLite Database for historical analytics tracking
 └── main.py                     # CLI fallback runner
 ```
 
