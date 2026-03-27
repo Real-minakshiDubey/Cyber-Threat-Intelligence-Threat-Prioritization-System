@@ -1,0 +1,27 @@
+# 🔐 Environment & Secrets
+.env
+.env.*
+
+# 🔑 API Keys / Config
+config_local.py
+secrets.json
+
+# 📁 Data files
+data/
+*.csv
+*.json
+
+# 📦 Python cache
+__pycache__/
+*.pyc
+
+# 🧪 Virtual env
+venv/
+.env/
+
+# 🖥️ OS files
+.DS_Store
+Thumbs.db
+
+# 🧾 Logs
+*.log
