@@ -1,51 +1,93 @@
-# Cyber Threat Intelligence – Threat Prioritization System
+# SENTINEL - Cyber Risk Platform
 
-## Overview
-This project builds a simple Python-based threat prioritization system using the MITRE ATT&CK dataset. 
-The system analyzes attack techniques and assigns risk scores based on logical keyword analysis 
-to help security analysts prioritize high-risk threats.
+> **Author**: Minakshi Dubey
+> **Project Type**: Final Project
 
-## Dataset
-Dataset used:
-https://raw.githubusercontent.com/mitre/cti/master/enterprise-attack/enterprise-attack.json
+## Project Overview
+Sentinel is an advanced, real-time vulnerability analysis and risk intelligence dashboard. It maps open ports and active threats onto a three-dimensional Risk Matrix (Exposure, Threat, Context) and evaluates against NIST CSF and OWASP Top 10 compliance standards. 
 
-The dataset contains multiple cybersecurity objects including malware, tools, campaigns, 
-and attack techniques. This project extracts only objects where:
-type == "attack-pattern"
+This project aligns exactly with the 3-page structural assignment requirements:
+- **Page 1 (Overview)**: Current state summaries, critical condition banners, KPIs, and clear visual timeline/bar distributions instead of text-heavy tables.
+- **Page 2 (Analytics)**: Deep-dive table views showcasing combined NMAP and VirusTotal metrics alongside historical heatmaps.
+- **Page 3 (Reports/History)**: Dedicated interfaces to pull SQLite/JSON historical logs into audit-ready PDF formats.
 
-## Threat Scoring Logic
-Each technique starts with a base score of 5.
+---
 
-Additional score is added based on:
+## 🛠 Project Structure & Modularity
 
-### Name-Based Intelligence
-- credential → +3
-- execution → +2
-- privilege → +3
-- persistence → +2
-- lateral → +2
+Per the assignment requirements, this application is written in a strictly **modular format**. It is NOT a single giant python script. The architecture is cleanly separated into specialized modules:
 
-### Description-Based Intelligence
-- administrator → +2
-- remote → +2
-- bypass → +2
-- stealth → +1
+```text
+Final_Project/
+├── dashboard/
+│   └── app.py                  # Main Streamlit UI frontend
+├── scanner/
+│   ├── nmap_scanner.py         # Nmap port mapping logic
+│   ├── config_scanner.py       # Local OS & package auditing
+│   └── openvas.py              # OpenVAS Enterprise API wrapper
+├── threat_intel/
+│   └── aggregator.py           # Core logic merging VT, Shodan & AbuseIPDB
+├── risk/
+│   ├── risk_score.py           # CVSS metric mathematics
+│   └── ml_model.py             # Feature engineering & ML risk prediction
+├── data/
+│   └── history.json            # Flat-file database for history/SQLite equivalent
+└── main.py                     # CLI fallback runner
+```
 
-Techniques are then ranked from highest to lowest score.
+---
 
-## Results
-The system outputs:
-- Top 10 highest-risk techniques
-- Critical threats where score ≥ 8.9
+## ⚙️ Core Technologies & Tools Used
 
-## How to Run
-1. Install Python
-2. Install requests library
-3. Run the notebook
-4. Execute all cells
+To achieve this, several powerful cybersecurity and data tools were integrated:
 
-## Why This Helps Analysts
-This scoring system automates threat prioritization by highlighting techniques 
-associated with credential theft, privilege escalation, remote exploitation, 
-and security bypass behavior. It reduces manual workload and helps analysts 
-focus on high-impact threats first.
+1. **[Nmap (Network Mapper)](https://nmap.org/)**: An open-source utility for network discovery and security auditing. We use the `python-nmap` library to asynchronously discover open services on a target IP.
+2. **[VirusTotal API](https://www.virustotal.com/)**: Analyzes suspicious files, domains, and IPs to detect malware. Integrated to fetch real-time community threat scores and malicious voting history.
+3. **[Streamlit](https://streamlit.io/)**: An open-source Python framework used to build and layout the interactive, dynamic frontend data dashboard quickly.
+4. **[Paramiko](https://www.paramiko.org/)**: Used within our backend for authenticated SSH configuration auditing (`config_scanner.py`).
+
+---
+
+## 🎯 Target Sites Used for Testing
+During development, the following targets were primarily utilized for safe, ethical scanning:
+- `scanme.nmap.org`: The official Nmap project test server. It intentionally leaves several ports open to allow users to legally verify their port scanners work correctly.
+- `1.1.1.1`: Cloudflare's public DNS. An excellent benchmark to test "Clean/Low Risk" integrations since it has minimal open ports and a flawless VirusTotal reputation.
+
+---
+
+## 🚀 How to Run the Project
+
+1. **Install Dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+2. **Launch the Dashboard**:
+   ```bash
+   streamlit run dashboard/app.py
+   ```
+3. **Run a Scan**: 
+   - Wait for the dashboard to load in your browser.
+   - Open the **Target Context** input inside the slide-out sidebar.
+   - Enter your target IP (e.g., `127.0.0.1` or `scanme.nmap.org`).
+   - Click **Initiate Scan**.
+
+---
+
+## 🔒 Security & Credentials Note
+**CRITICAL**: My personal API keys (VirusTotal, Shodan) are kept completely secret.
+-  **No credentials** have been uploaded to GitHub.
+- All keys are safely managed using `.env` files.
+- The `.env` file is explicitly ignored from source control using `.gitignore`.
+- Additionally, the dashboard's Target Input functionality has been relocated directly into the side-panel so any viewers on the main page cannot maliciously misuse the backend keys.
+
+---
+
+## 📸 Project Screenshots
+
+*(Replace the placeholder links below with actual screenshots of your dashboard)*
+
+![Overview Page Dashboard](/path/to/overview_screenshot.png)
+*Figure 1: The Overview page demonstrating the System Posture Banner and KPIs.*
+
+![Analytics Page](/path/to/analytics_screenshot.png)
+*Figure 2: The combined NMAP & Threat Intelligence detailed view.*
