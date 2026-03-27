@@ -106,8 +106,6 @@ During development, the following targets were primarily utilized for safe, ethi
 
 ## 📸 Project Screenshots
 
-*(Replace the placeholder links below with actual screenshots of your dashboard)*
-
 <img width="1894" height="796" alt="image" src="https://github.com/user-attachments/assets/253d36f8-eb9f-40a5-b09f-d7af7c6f361e" />
 
 *Figure 1: The Overview page demonstrating the System Posture Banner and KPIs.*
