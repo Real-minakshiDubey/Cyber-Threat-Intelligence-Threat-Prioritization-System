@@ -108,8 +108,14 @@ During development, the following targets were primarily utilized for safe, ethi
 
 *(Replace the placeholder links below with actual screenshots of your dashboard)*
 
-![Overview Page Dashboard](/path/to/overview_screenshot.png)
+<img width="1894" height="796" alt="image" src="https://github.com/user-attachments/assets/253d36f8-eb9f-40a5-b09f-d7af7c6f361e" />
+
 *Figure 1: The Overview page demonstrating the System Posture Banner and KPIs.*
 
-![Analytics Page](/path/to/analytics_screenshot.png)
+<img width="1896" height="800" alt="image" src="https://github.com/user-attachments/assets/0a810aa9-b289-4921-9ad8-796cee1b6f89" />
+
 *Figure 2: The combined NMAP & Threat Intelligence detailed view.*
+
+<img width="1887" height="789" alt="image" src="https://github.com/user-attachments/assets/05292734-bcbe-499f-828e-0fe332aec155" />
+
+*Figure 3: The reports generator detailed view.*
