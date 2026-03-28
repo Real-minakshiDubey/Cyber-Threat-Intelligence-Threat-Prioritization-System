@@ -113,19 +113,21 @@ During development, the following targets were primarily utilized for safe, ethi
 
 ## 📸 Project Screenshots
 
-*(Replace the placeholder links below with actual screenshots of your dashboard)*
-
 <img width="1900" height="791" alt="image" src="https://github.com/user-attachments/assets/5139ea12-4136-4b15-96c7-9583ba0112dc" />
 *Figure 1: Overview — System Posture Banner, KPIs, and risk distribution charts.*
+
 
 <img width="1876" height="794" alt="image" src="https://github.com/user-attachments/assets/475ef15b-a9a9-4a68-a356-b137fb30351f" />
 *Figure 2: Scan Report — Per-target result card with ports, threat intel, and compliance hits.*
 
+
 <img width="1875" height="790" alt="image" src="https://github.com/user-attachments/assets/9b8c3431-6928-456a-af4d-2b6bc60a9cd7" />
 *Figure 3: History — Trend analytics, heatmap, and SQLite history table*
 
+
 <img width="1875" height="797" alt="image" src="https://github.com/user-attachments/assets/4f3742e5-d115-4076-b25b-d1b07e8e2a89" />
 *Figure 4: Analytics — Multi-dimensional threat visualizations across all scanned targets.*
+
 
 <img width="1872" height="794" alt="image" src="https://github.com/user-attachments/assets/51d52805-b339-4584-8653-f6af91c96886" />
 *Figure 5: Generated PDF report with OWASP Top 10 and NIST CSF compliance mapping.*
