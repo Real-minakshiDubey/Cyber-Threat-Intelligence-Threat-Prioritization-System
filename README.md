@@ -10,8 +10,8 @@ This project organizes the platform into 4 main interfaces:
 - **Page 1 (Overview)**: Current state summaries, critical condition banners, KPIs, and clear visual timeline/bar distributions instead of text-heavy tables.
 - **Page 2 (Scan Report)**: Deep-dive detailed operational views showcasing combined NMAP surface features and VirusTotal metrics for each target.
 - **Page 3 (History)**: Dedicated tracking of SQLite historical logs, trend analytics, and risk heatmap distributions over time.
-- **Page 5 (Analytics)**: Interactive Multi-dimensional threat visualizations built from the full cross-target scan history.
-- **Page 4 (Reports)**: Interactive interface to configure parameters and generate audit-ready, downloadable PDF formats mapping results to OWASP and NIST.
+- **Page 4 (Analytics)**: Interactive Multi-dimensional threat visualizations built from the full cross-target scan history.
+- **Page 5 (Reports)**: Interactive interface to configure parameters and generate audit-ready, downloadable PDF formats mapping results to OWASP and NIST.
 
 ---
 
